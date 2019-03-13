@@ -78,6 +78,8 @@
         
         // Define search patterns
         var searchPatterns = [
+            { pattern:  /^\?/i,
+              link:     (val) => 'https://github.com/sahasatvik/startpage#commands'},
             { pattern:  /^:/i,
               link:     (val) => 'http://' + val.substring(1)},
             { pattern:  /^;/i,
@@ -124,9 +126,9 @@
               link:     (val) => 'https://google.com/search?q=' + val.substring(2)},
             { pattern:  /^g(\/)?$/i,
               link:     (val) => 'https://google.com'},
-            { pattern:  /^[\/?].+/i,
+            { pattern:  /^\/.+/i,
               link:     (val) => 'https://google.com/search?q=' + val.substring(1)},
-            { pattern:  /^[\/?]$/i,
+            { pattern:  /^\/$/i,
               link:     (val) => 'https://google.com'},
             { pattern:  /^.+/i,
               link:     (val) => 'https://google.com/search?q=' + val}
