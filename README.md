@@ -4,7 +4,8 @@
 Start typing any of the following commands and hit enter.
 
 Command                             |   Action
-------------------------------------|-------------------------------
+:-----------------------------------|:-------------------------------
+`?`                                 |   Open this table of commands
 `:url`                              |   Open `http://url`
 `;url`                              |   Open `https://url`
 `g`                                 |   Open [google][gg]
