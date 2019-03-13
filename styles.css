@@ -67,6 +67,15 @@ a {
     font-size: 1rem;
 }
 
+#help {
+    position: absolute;
+    right: 1%;
+    bottom: 1%;
+    font-size: .8rem;
+    font-weight: 300;
+    color: #afafaf;
+}
+
 @media only screen and (max-width: 600px) {
     #global-container {
         width: auto;
@@ -78,6 +87,10 @@ a {
     }
     #bookmark-card-container {
         width: 80%;
+    }
+    #help {
+        position: relative;
+        margin: 1em 0em;
     }
 }
 
