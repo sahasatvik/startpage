@@ -24,13 +24,13 @@ a {
 }
 
 #clock {
-    font-size: 3rem;
+    font-size: 5rem;
     font-weight: 300;
     color: #ffffff;
 }
 
 #clock-padding {
-    height: 40px;
+    height: 32px;
 }
 
 #search {
@@ -59,8 +59,12 @@ a {
 }
 
 #bookmark-card-container {
-    width: 60%;
-    height: auto;
+    width: 70%;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.card {
+    grid-column: span 1;
 }
 
 #greeting-description {
