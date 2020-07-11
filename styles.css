@@ -82,6 +82,8 @@ a {
 }
 
 #bookmark-card-container {
+    position: absolute;
+    top: 44vh;
     width: 60%;
     grid-template-columns: repeat(4, 1fr);
 }
@@ -91,7 +93,7 @@ a {
     text-align: center;
 }
 
-.card > .card-inner-container > .card-item {
+.card > .card-inner-container > .card-item:first-child {
     font-size: 1.5em;
 }
 
@@ -114,10 +116,14 @@ a {
         top: 0;
     }
     #bookmark-card-container {
+        position: relative;
+        top: 0;
         width: 80%;
+        grid-template-columns: 1fr;
     }
     #help {
         position: relative;
+        top: 0;
         margin: 1em 0em;
     }
 }
