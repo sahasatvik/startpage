@@ -15,67 +15,29 @@
         <input id="search-field" type="text" name="search-field" onkeypress="return search(event)"/>
     </div>
     <div id="global-container">
-        <div id="clock"></div>
-        <div id="clock-padding"></div>
+        <div id="logo-container">
+            <img id="logo" src="https://sahasatvik.github.io/logo_alpha.svg" alt="" onmouseup="toggleTheme()"/>
+            <div id="startpage">Startpage</div>
+        </div>
         <div id="bookmark-card-container" class="card-container">
-            <div id="comics-set" class="card card-dark">
-                <div class="card-title">
-                    Comics
-                </div>
+            <div id="github" class="card card-dark borderless">
                 <div class="card-inner-container">
-                    <a class="card-item" href="http://www.commitstrip.com/en/?" target="_blank">commitstrip</a>
-                    <a class="card-item" href="https://consolia-comic.com" target="_blank">consolia</a>
-                    <a class="card-item" href="http://www.smbc-comics.com" target="_blank">smbc</a>
-                    <a class="card-item" href="http://www.spikedmath.com" target="_blank">spikedmath</a>
-                    <a class="card-item" href="http://turnoff.us" target="_blank">turnoff.us</a>
-                    <a class="card-item" href="https://xkcd.com" target="_blank">xkcd</a>
+                    <a class="card-item" href="https://github.com/sahasatvik" target="_blank">github</a>
                 </div>
             </div>
-            <div id="games-set" class="card card-dark">
-                <div class="card-title">
-                    Games
-                </div>
+            <div id="lichess" class="card card-dark borderless">
                 <div class="card-inner-container">
-                    <a class="card-item" href="https://chess.com/home" target="_blank">chess.com</a>
-                    <a class="card-item" href="https://chesstempo.com" target="_blank">chesstempo</a>
-                    <a class="card-item" href="https://www.keybr.com" target="_blank">keybr</a>
-                    <a class="card-item" href="https://www.keyhero.com/free-typing-test/" target="_blank">keyhero</a>
                     <a class="card-item" href="https://lichess.org" target="_blank">lichess</a>
                 </div>
             </div>
-            <div id="media-set" class="card card-dark">
-                <div class="card-title">
-                    Media
-                </div>
+            <div id="reddit" class="card card-dark borderless">
                 <div class="card-inner-container">
-                    <a class="card-item" href="https://music.google.com" target="_blank">gplay music</a>
-                    <a class="card-item" href="https://www.last.fm/user/sahasatvik" target="_blank">last.fm</a>
-                    <a class="card-item" href="https://open.spotify.com/collection/playlists" target="_blank">spotify</a>
-                    <a class="card-item" href="https://twitch.tv" target="_blank">twitch</a>
-                    <a class="card-item" href="https://youtube.com" target="_blank">youtube</a>
-                </div>
-            </div>
-            <div id="social-set" class="card card-dark">
-                <div class="card-title">
-                    Social
-                </div>
-                <div class="card-inner-container">
-                    <a class="card-item" href="https://news.ycombinator.com" target="_blank">hackernews</a>
-                    <a class="card-item" href="https://medium.com" target="_blank">medium</a>
-                    <a class="card-item" href="https://quora.com" target="_blank">quora</a>
                     <a class="card-item" href="https://reddit.com" target="_blank">reddit</a>
                 </div>
             </div>
-            <div id="work-set" class="card card-dark">
-                <div class="card-title">
-                    Work
-                </div>
+            <div id="youtube" class="card card-dark borderless">
                 <div class="card-inner-container">
-                    <a class="card-item" href="https://drive.google.com" target="_blank">drive</a>
-                    <a class="card-item" href="https://github.com/sahasatvik" target="_blank">github</a>
-                    <a class="card-item" href="https://mail.google.com" target="_blank">gmail</a>
-                    <a class="card-item" href="https://en.wikipedia.org" target="_blank">wikipedia</a>
-                    <a class="card-item" href="https://www.wolframalpha.com" target="_blank">wolframalpha</a>
+                    <a class="card-item" href="https://youtube.com" target="_blank">youtube</a>
                 </div>
             </div>
         </div>
@@ -156,19 +118,7 @@
                 }
             }
         }
-        // Get current time and format
-        function getTime() {
-            let date = new Date(),
-                min = date.getMinutes(),
-                sec = date.getSeconds(),
-                hour = date.getHours();
-
-            return "" + 
-                (hour < 10 ? ("0" + hour) : hour) + ":" + 
-                (min < 10 ? ("0" + min) : min) + ":" + 
-                (sec < 10 ? ("0" + sec) : sec);
-        }
-
+        
         function openSearch() {
             document.getElementById('search').style.display = 'flex';
             document.getElementById('search-field').focus();
@@ -180,15 +130,6 @@
             document.getElementById('search').style.display = 'none';
         }
 
-        window.onload = () => {
-            // Set up the clock
-            document.getElementById("clock").innerHTML = getTime();
-            // Set clock interval to tick clock and update greeting
-            setInterval( () => {
-                document.getElementById("clock").innerHTML = getTime();
-            }, 100);
-        }
-        
         document.addEventListener("keydown", event => {
             let code = event.keyCode;
             if (triggers.includes(code)) {
@@ -197,6 +138,51 @@
                 closeSearch();
             }
         });
+        
+        var x = document.getElementsByClassName("card");
+        var light;
+        
+        try {
+            light = JSON.parse(localStorage.getItem("light"));
+            if (light == null) {light = false;}
+        } catch (err) {
+            light = false;
+        }
+        
+        function lightTheme() {
+            document.getElementById("logo").classList.add("inverted");
+            for (var i = 0; i < x.length; i++) {
+                x[i].classList.remove("card-dark");
+            }
+            document.body.style.backgroundColor = "#f2f2f2";
+            document.getElementById("startpage").style.color = "#1d1f21";
+            document.getElementById("search").style.backgroundColor = "#f2f2f2";
+            document.getElementById("search-field").style.backgroundColor = "#f2f2f2";
+            document.getElementById("search-field").style.color = "#1d1f21";
+        }
+        function darkTheme() {
+            document.getElementById("logo").classList.remove("inverted");
+            for (var i = 0; i < x.length; i++) {
+                x[i].classList.add("card-dark");
+            }
+            document.body.style.backgroundColor = "#1d1f21";
+            document.getElementById("startpage").style.color = "#ffffff";
+            document.getElementById("search").style.backgroundColor = "#1d1f21";
+            document.getElementById("search-field").style.backgroundColor = "#1d1f21";
+            document.getElementById("search-field").style.color = "#ffffff";
+        }
+        function toggleTheme() {
+            light = !light;
+            refreshTheme();
+        }
+        function refreshTheme() {
+            theme = light? lightTheme : darkTheme;
+            theme();
+            try {
+                localStorage.setItem("light", JSON.stringify(light));
+            } catch (err) {}
+        }
+        refreshTheme();
     </script>
 </body>
 </html>

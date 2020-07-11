@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:300,400');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:300,400|Josefin+Sans:300');
 
 * {
     padding: 0px;
@@ -23,32 +23,55 @@ a {
     flex-direction: column;
 }
 
-#clock {
-    font-size: 5rem;
-    font-weight: 300;
-    color: #ffffff;
+#logo-container {
+    position: absolute;
+    bottom: 55vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 4em 0em .5em 0em;
 }
 
-#clock-padding {
-    height: 32px;
+#logo {
+    width: auto;
+    height: 6rem;
+    transition: .5s ease;
+    margin-bottom: .5em;
+}
+
+#logo.inverted, #logo:hover {
+    filter: invert(100%);
+}
+
+#logo.inverted:hover {
+    filter: invert(0%);
+}
+
+#startpage {
+    font-family: 'Josefin Sans', monospace;
+    font-weight: 300;
+    font-size: 3.5rem;
+    color: #ffffff;
 }
 
 #search {
     width: 100%;
     height: 100vh;
-    background-color: #1d1f21;
     display: none;
+    background: #1d1f21;
     position: absolute;
     box-sizing: border-box;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    z-index: 10;
 }
 
 #search-field {
     width: 90%;
     height: auto;
-    font-size: 4rem;
+    font-size: 4em;
     font-weight: 300;
     color: #ffffff;
     background-color: #1d1f21;
@@ -59,23 +82,24 @@ a {
 }
 
 #bookmark-card-container {
-    width: 70%;
-    grid-template-columns: repeat(5, 1fr);
+    width: 60%;
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .card {
     grid-column: span 1;
+    text-align: center;
 }
 
-#greeting-description {
-    font-size: 1rem;
+.card > .card-inner-container > .card-item {
+    font-size: 1.5em;
 }
 
 #help {
     position: absolute;
     right: 1%;
     bottom: 1%;
-    font-size: .8rem;
+    font-size: .8em;
     font-weight: 300;
     color: #afafaf;
 }
@@ -85,9 +109,9 @@ a {
         width: auto;
         height: auto;
     }
-    #clock {
-        font-size: 3rem;
-        margin-top: 1em;
+    #logo-container {
+        position: relative;
+        top: 0;
     }
     #bookmark-card-container {
         width: 80%;
