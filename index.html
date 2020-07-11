@@ -45,6 +45,26 @@
     </div>
 
     <script>
+        var hour = new Date().getHours();
+        var greeting = "";
+        if (hour < 12) {
+            greeting = "Good morning!";
+        } else if (hour < 16) {
+            greeting = "Good afternoon!";
+        } else if (hour < 22) {
+            greeting = "Good evening!";
+        } else {
+            greeting = "Good night!";
+        }
+
+        if (Math.random() < 0.1) {
+            greeting = "Hello there!";
+        } else if (Math.random() < 0.1) {
+            greeting = "What's new?";
+        }
+
+        document.getElementById("startpage").innerHTML = greeting;
+
         // Define trigger key codes [/ ? : ; g r w y]
         var triggers = [191, 59, 186, 71, 82, 87, 89];
         
