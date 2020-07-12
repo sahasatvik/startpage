@@ -55,7 +55,9 @@
     <script>
         var hour = new Date().getHours();
         var greeting = "";
-        if (hour < 12) {
+        if (hour < 6) {
+            greeting = "Good night!";
+        } else if (hour < 12) {
             greeting = "Good morning!";
         } else if (hour < 16) {
             greeting = "Good afternoon!";
