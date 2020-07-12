@@ -90,6 +90,8 @@
               link:     (val) => 'https://reddit.com'},
             { pattern:  /^y\/s$/i,
               link:     (val) => 'https://youtube.com/feed/subscriptions'},
+            { pattern:  /^y\/m(us(ic)?)?$/i,
+              link:     (val) => 'https://music.youtube.com'},
             { pattern:  /^y\/.+/i,
               link:     (val) => 'https://youtube.com/results?search_query=' + val.substring(2)},
             { pattern:  /^y(\/)?$/i,

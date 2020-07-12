@@ -24,6 +24,7 @@ Command                             |   Action
 `g/translate` `g/tra` `g/t`         |   Open google [translate](https://translate.google.com)
 `y`                                 |   Open [youtube][yt]
 `y/s`                               |   Open your youtube [subscriptions](https://youtube.com/feed/subscriptions)
+`y/music` `y/mus` `y/m`             |   Open youtube [music](https://music.youtube.com)
 `y/text`                            |   Search [youtube][yt] for `text`
 `r`                                 |   Open [reddit][rt]
 `r/subreddit`                       |   Open the `subreddit` subreddit on [reddit][rt]
