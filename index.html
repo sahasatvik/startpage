@@ -65,10 +65,19 @@
             greeting = "Good night!";
         }
 
-        if (Math.random() < 0.1) {
-            greeting = "Hello there!";
-        } else if (Math.random() < 0.1) {
-            greeting = "What's new?";
+        var greeters = [
+            "Greetings!",
+            "Hello there!",
+            "What's new?",
+            "Howdy!",
+            "Ahoy!",
+            "Aloha!",
+            "Hola!",
+            "Bonjour!"
+        ]
+
+        if (Math.random() < 0.2) {
+            greeting = greeters[Math.floor(Math.random() * greeters.length)];
         }
 
         document.getElementById("startpage").innerHTML = greeting;
