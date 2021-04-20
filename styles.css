@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:300,400|Josefin+Sans:300');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Fira+Mono:wght@400&display=swap');
 
 * {
     padding: 0px;
     margin: 0px;
-    font-family: "Roboto Mono", monospace;
+    font-family: "Fira Mono", monospace;
 }
 
 body.light-theme {
@@ -87,7 +87,6 @@ a {
     width: 90%;
     height: auto;
     font-size: 4em;
-    font-weight: 300;
     border: solid 0px #1d1f21;
     outline: none;
     box-sizing: border-box;
@@ -124,7 +123,6 @@ a {
     right: 1%;
     bottom: 1%;
     font-size: .8em;
-    font-weight: 300;
     color: #afafaf;
 }
 
