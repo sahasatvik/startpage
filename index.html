@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Startpage</title>
-    
+
     <link rel="stylesheet" href="https://sahasatvik.github.io/cards.css">
     <link rel="stylesheet" href="styles.css">
     <link href="favicon.png" rel="shortcut icon" type="image/x-icon" />
@@ -37,14 +37,14 @@
             <div id="reading" class="card card-dark borderless">
                 <div class="card-inner-container">
                     <a class="card-item" href="https://reddit.com" target="_blank">reddit</a>
-                    <a class="card-item" href="https://medium.com" target="_blank">medium</a>
-                    <a class="card-item" href="https://quora.com" target="_blank">quora</a>
+                    <a class="card-item" href="https://terrytao.wordpress.com" target="_blank">tao</a>
+                    <a class="card-item" href="https://xkcd.com" target="_blank">xkcd</a>
                 </div>
             </div>
             <div id="media" class="card card-dark borderless">
                 <div class="card-inner-container">
                     <a class="card-item" href="https://youtube.com" target="_blank">youtube</a>
-                    <a class="card-item" href="https://music.youtube.com" target="_blank">yt music</a>
+                    <a class="card-item" href="https://open.spotify.com" target="_blank">spotify</a>
                     <a class="card-item" href="https://www.last.fm/user/sahasatvik" target="_blank">lastfm</a>
                 </div>
             </div>
@@ -86,7 +86,7 @@
 
         // Define trigger key codes [/ ? : ; g r w y]
         var triggers = [191, 59, 186, 71, 82, 87, 89];
-        
+
         // Define search patterns
         var searchPatterns = [
             { pattern:  /^\?/i,
@@ -146,6 +146,7 @@
             { pattern:  /^.+/i,
               link:     (val) => 'https://google.com/search?q=' + val}
         ];
+
         // Search on enter key event
         function search(e) {
             if (e.keyCode == 13) {
@@ -159,7 +160,7 @@
                 }
             }
         }
-        
+
         function openSearch() {
             document.getElementById('search').style.display = 'flex';
             document.getElementById('search-field').focus();
@@ -179,16 +180,16 @@
                 closeSearch();
             }
         });
-        
+
         var light;
-        
+
         try {
             light = JSON.parse(localStorage.getItem("light"));
             if (light == null) {light = false;}
         } catch (err) {
             light = false;
         }
-        
+
         function lightTheme() {
             document.body.classList.remove("dark-theme");
             document.body.classList.add("light-theme");
@@ -208,7 +209,7 @@
                 localStorage.setItem("light", JSON.stringify(light));
             } catch (err) {}
         }
-        
+
         refreshTheme();
     </script>
 </body>
