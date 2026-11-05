@@ -10,7 +10,7 @@ body.light-theme {
     background-color: #f8f8f8;
 }
 body.dark-theme {
-    background-color: #1d1f21;
+    background-color: #121212;
 }
 
 a {
@@ -58,7 +58,7 @@ a {
 }
 
 .light-theme #startpage {
-    color: #1d1f21;
+    color: #121212;
 }
 .dark-theme #startpage {
     color: #ffffff;
@@ -80,26 +80,26 @@ a {
     background: #f8f8f8;
 }
 .dark-theme #search {
-    background: #1d1f21;
+    background: #121212;
 }
 
 #search-field {
     width: 90%;
     height: auto;
     font-size: 4em;
-    border: solid 0px #1d1f21;
+    border: solid 0px #121212;
     outline: none;
     box-sizing: border-box;
     text-align: center;
 }
 
 .light-theme #search-field {
-    color: #1d1f21;
+    color: #121212;
     background: #f8f8f8;
 }
 .dark-theme #search-field {
     color: #ffffff;
-    background: #1d1f21;
+    background: #121212;
 }
 
 #bookmark-card-container {
